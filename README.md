@@ -131,7 +131,7 @@ kubeadm join 10.184.0.2:6443 --token zv4ph6.mj2x64qhxycqb35w \
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-**Run this part on the worker node server only**
+**Run this part on the worker node server only to Join Worker into the cluster**
 
 ```bash
 kubeadm join 10.184.0.2:6443 --token zv4ph6.mj2x64qhxycqb35w \
