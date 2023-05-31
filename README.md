@@ -266,4 +266,4 @@ kubectl describe secret admin-dashboard-token -n default
 
 Now you can login using that token.
 
-<img src="https://i.ibb.co/TRV44tN/kubernetes-dashboard-nodes-ibrahimzfe.png" title="" alt="" width="593">
+<img title="" src="https://i.ibb.co/TRV44tN/kubernetes-dashboard-nodes-ibrahimzfe.png" alt="" width="709">
