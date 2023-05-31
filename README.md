@@ -1,6 +1,6 @@
 # k8s-onpremise-baremetal
 
-**HOW INSTALL KUBERNETES IN CLOUD,VMWARE,BAREMETAL,ONPREMISE etc...**
+**HOW TO INSTALL KUBERNETES IN CLOUD,VMWARE,BAREMETAL,ONPREMISE etc...**
 
 This is my cluster k8s deployment. im usually deploy on my private server,instance cloud or even baremetal. I tried in my own way, hopefully useful. please mention me if useful hahaha just kidding. thanks
 
