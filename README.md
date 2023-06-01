@@ -12,7 +12,13 @@ k8s-master1: minimal 1 unit server. (2-4VCPU with memory minimum 2GB or more)
 
 k8s-worker1: minimal 1 unit server. (2-4VCPU with memory minimum 2GB or more)
 
-k8s-worker2: 
+k8s-worker2: ...
+
+k8s-worker3: ...
+
+
+
+How many worker you want is up to you. But good option from me is minimum 2 node worker :)
 
 For example in this cluster configuration like this:
 
