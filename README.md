@@ -4,23 +4,15 @@
 
 This is my cluster k8s deployment. im usually deploy on my private server,instance cloud or even baremetal. I tried in my own way, hopefully useful. please mention me if useful hahaha just kidding. thanks
 
-
-
 im using Kubernetes version 1.25, You can install any version kubernetes you like. And of course i installed it on my cloud server, but i test it too on my baremetal,onpremise,virtual private server and even Vmware!
 
-
-
 You can use any distro linux. i test it using ubuntu and centos. i will update asap.
-
-
 
 k8s-master1: minimal 1 unit server. (2-4VCPU with memory minimum 2GB or more)
 
 k8s-worker1: minimal 1 unit server. (2-4VCPU with memory minimum 2GB or more)
 
 k8s-worker2: 
-
-
 
 For example in this cluster configuration like this:
 
@@ -29,6 +21,14 @@ For example in this cluster configuration like this:
 | k8s-master1 | 10.184.0.2 | master,control plane |
 | k8s-worker1 | 10.184.0.3 | worker/minion        |
 | k8s-worker2 | 10.184.0.4 | worker/minion        |
+
+My topology will like this.
+
+
+
+![](https://i.ibb.co/NC03Cdy/k8s-onpremise-baremetal.png)
+
+**Lets start...**
 
 **Update the master and worker.**
 
@@ -84,8 +84,6 @@ systemctl restart containerd
 
 If you want to install specific version of kubernetes. You can type like this:
 
-
-
 ```bash
 apt install kubeadm=1.25.9-00 kubectl=1.25.9-00 kubelet=1.25.9-00
 ```
@@ -140,8 +138,6 @@ kubeadm join 10.184.0.2:6443 --token zv4ph6.mj2x64qhxycqb35w \
 
 That join code command you can get from last command when you run on the master...
 
-
-
 **Network Manifest**
 
 somepeople maybe love flannel or other. But in this cluster i prefer to choose Callico. So we will deploy Callico as our CNI (container network interface). Run this command in master.
@@ -160,8 +156,6 @@ kubectl get nodes
 
 Makesure all server status is ready. Sometimes you need 1-2 minutes for server to ready. (it takes long when im using slow spec server).
 
-
-
 **LABEL the server kubernetes (k8s)**
 
 sometimes i give label too on my kubernetes server, like this.
@@ -175,8 +169,6 @@ kubectl label nodes k8s-worker2 kubernetes.io/role=worker
 that name of server depend on your hostname server. My output like this:
 
 <img src="https://i.ibb.co/HFxFHcg/ibrahimzfe-k8s.png" title="" alt="" width="354">
-
-
 
 **Dashboard Kubernetes**
 
@@ -221,8 +213,6 @@ You will get warning for accessing https from the browser. (i will update the re
 Just prefer accept from the browser right now and select **Token **to login.
 
 So how you login into dashboard kubernetes using token? This is how we doit.
-
-
 
 **Create Token Kubernetes (k8s) To Login.**
 
