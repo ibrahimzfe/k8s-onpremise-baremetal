@@ -85,7 +85,7 @@ systemctl restart containerd
 If you want to install specific version of kubernetes. You can type like this:
 
 ```bash
-apt install kubeadm=1.25.9-00 kubectl=1.25.9-00 kubelet=1.25.9-00
+apt install kubeadm=1.25.10-00 kubectl=1.25.10-00 kubelet=1.25.1-00
 ```
 
 As you can see before, im using apt-mark hold to prevent packages upgrade automatically by the system. Because i want to upgrading kubernetes flow is under my control.
@@ -98,8 +98,8 @@ kubeadm init --pod-network-cidr=10.244.0.0/16
 
 You will get output like this.
 
-```textile
-Your Kubernetes control-plane has initialized successfully!
+```bash
+Your Kubernetes control-plane has initilized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
 
@@ -118,7 +118,9 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 Then you can join any number of worker nodes by running the following on each as root:
 
 kubeadm join 10.184.0.2:6443 --token zv4ph6.mj2x64qhxycqb35w \
-        --discovery-token-ca-cert-ha:01284d332019c6f8a9ff6f977e8db5f202as7hcaf4584f97f8e48354c0639e49
+        --discovery-token-ca-cert-hash sha256:01284d33201ff6f977e8db5yyyf202as7hcaf4584f97f8e48354c0639e49
+
+
 ```
 
 **Run this part on the master server only:**
@@ -133,10 +135,12 @@ kubeadm join 10.184.0.2:6443 --token zv4ph6.mj2x64qhxycqb35w \
 
 ```bash
 kubeadm join 10.184.0.2:6443 --token zv4ph6.mj2x64qhxycqb35w \
-        --discovery-token-ca-cert-ha:01284d332019c6f8a9ff6f977e8db5f202as7hcaf4584f97f8e48354c0639e49
+        --discovery-token-ca-cert-hash sha256:01284d33201ff6f977e8db5yyyf202as7hcaf4584f97f8e48354c0639e49That join code command you can get from last command when you run on the master...
 ```
 
 That join code command you can get from last command when you run on the master...
+
+
 
 **Network Manifest**
 
